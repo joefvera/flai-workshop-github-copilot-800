@@ -41,3 +41,5 @@ urlpatterns = [
     path('api/', api_root, name='api-root-api'),
     path('api/', include(router.urls)),
 ]
+
+# Base URL for reference: {base_url}
