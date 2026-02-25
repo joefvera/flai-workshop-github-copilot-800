@@ -16,14 +16,14 @@ class Command(BaseCommand):
 
         self.stdout.write('Creating users (superheroes)...')
         users = [
-            User(name='Tony Stark', email='tony@avengers.com', password='ironman123', age=45),
-            User(name='Steve Rogers', email='steve@avengers.com', password='cap123', age=105),
-            User(name='Natasha Romanoff', email='natasha@avengers.com', password='widow123', age=38),
-            User(name='Thor Odinson', email='thor@avengers.com', password='hammer123', age=1500),
-            User(name='Bruce Wayne', email='bruce@gotham.com', password='batman123', age=40),
-            User(name='Clark Kent', email='clark@dailyplanet.com', password='superman123', age=35),
-            User(name='Diana Prince', email='diana@themyscira.com', password='wonder123', age=800),
-            User(name='Barry Allen', email='barry@ccpd.com', password='flash123', age=28),
+            User(name='Tony Stark',       email='tony@avengers.com',       password='ironman123',  age=45,   team='Team Marvel'),
+            User(name='Steve Rogers',     email='steve@avengers.com',      password='cap123',      age=105,  team='Team Marvel'),
+            User(name='Natasha Romanoff', email='natasha@avengers.com',    password='widow123',    age=38,   team='Team Marvel'),
+            User(name='Thor Odinson',     email='thor@avengers.com',       password='hammer123',   age=1500, team='Team Marvel'),
+            User(name='Bruce Wayne',      email='bruce@gotham.com',        password='batman123',   age=40,   team='Team DC'),
+            User(name='Clark Kent',       email='clark@dailyplanet.com',   password='superman123', age=35,   team='Team DC'),
+            User(name='Diana Prince',     email='diana@themyscira.com',    password='wonder123',   age=800,  team='Team DC'),
+            User(name='Barry Allen',      email='barry@ccpd.com',          password='flash123',    age=28,   team='Team DC'),
         ]
         for u in users:
             u.save()
@@ -63,14 +63,14 @@ class Command(BaseCommand):
 
         self.stdout.write('Creating leaderboard...')
         leaderboard = [
-            Leaderboard(user='Thor Odinson', score=950),
-            Leaderboard(user='Steve Rogers', score=900),
-            Leaderboard(user='Diana Prince', score=875),
-            Leaderboard(user='Bruce Wayne', score=850),
-            Leaderboard(user='Tony Stark', score=800),
-            Leaderboard(user='Clark Kent', score=780),
-            Leaderboard(user='Natasha Romanoff', score=750),
-            Leaderboard(user='Barry Allen', score=720),
+            Leaderboard(user='Thor Odinson',     score=950, team='Team Marvel', calories=1200),
+            Leaderboard(user='Steve Rogers',     score=900, team='Team Marvel', calories=1100),
+            Leaderboard(user='Diana Prince',     score=875, team='Team DC',     calories=1050),
+            Leaderboard(user='Bruce Wayne',      score=850, team='Team DC',     calories=980),
+            Leaderboard(user='Tony Stark',       score=800, team='Team Marvel', calories=920),
+            Leaderboard(user='Clark Kent',       score=780, team='Team DC',     calories=860),
+            Leaderboard(user='Natasha Romanoff', score=750, team='Team Marvel', calories=830),
+            Leaderboard(user='Barry Allen',      score=720, team='Team DC',     calories=790),
         ]
         for entry in leaderboard:
             entry.save()

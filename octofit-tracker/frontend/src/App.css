@@ -1,0 +1,287 @@
+/* OctoFit Tracker — global styles */
+
+/* ── CSS custom properties (colour palette) ───────────────── */
+:root {
+  --ot-navy:      #0f3460;
+  --ot-navy-dark: #1a1a2e;
+  --ot-mid-navy:  #16213e;
+  --ot-red:       #e94560;
+  --ot-red-soft:  rgba(233, 69, 96, 0.18);
+  --ot-bg:        #eef1f6;
+  --ot-card-bg:   #ffffff;
+  --ot-text:      #1e293b;
+  --ot-text-muted:#64748b;
+  --ot-border:    #dee2e6;
+  --ot-teal:      #0ea5e9;
+  --ot-green:     #22c55e;
+  --ot-amber:     #f59e0b;
+  --ot-purple:    #8b5cf6;
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+body {
+  background-color: var(--ot-bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(15, 52, 96, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgba(233, 69, 96, 0.06) 0%, transparent 60%);
+  color: var(--ot-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: var(--ot-navy);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ot-red);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ot-navy-dark);
+  font-weight: 700;
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--ot-navy);
+  border-color: var(--ot-navy);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--ot-navy-dark);
+  border-color: var(--ot-navy-dark);
+}
+
+.btn-danger {
+  background-color: var(--ot-red);
+  border-color: var(--ot-red);
+}
+
+/* ── Navbar ─────────────────────────────────────────── */
+.octofit-navbar {
+  background: linear-gradient(135deg, var(--ot-navy-dark) 0%, var(--ot-mid-navy) 50%, var(--ot-navy) 100%) !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+}
+
+.octofit-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #ffffff !important;
+  gap: 0;
+}
+
+.octofit-navbar .navbar-brand span.brand-accent {
+  color: var(--ot-red);
+}
+
+.octofit-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  margin: 0 2px;
+}
+
+.octofit-navbar .nav-link:hover {
+  background-color: var(--ot-red-soft);
+  color: #fff !important;
+}
+
+.octofit-navbar .nav-link.active {
+  background-color: var(--ot-red);
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(233, 69, 96, 0.45);
+}
+
+/* ── Page wrapper ───────────────────────────────────── */
+.page-wrapper {
+  min-height: calc(100vh - 62px);
+  padding: 2rem 0 3rem;
+}
+
+/* ── Component cards ────────────────────────────────── */
+.octofit-card {
+  background-color: var(--ot-card-bg);
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(15, 52, 96, 0.12);
+  overflow: hidden;
+}
+
+.octofit-card .card-header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 1rem 1.5rem;
+  border-bottom: none;
+}
+
+.octofit-card .card-body {
+  padding: 0;
+  background-color: var(--ot-card-bg);
+}
+
+/* ── Tables ─────────────────────────────────────────── */
+.octofit-table {
+  margin-bottom: 0;
+  color: var(--ot-text);
+}
+
+.octofit-table thead {
+  background: linear-gradient(90deg, var(--ot-navy-dark) 0%, var(--ot-navy) 100%);
+}
+
+.octofit-table thead th {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  padding: 0.9rem 1.1rem;
+  border: none;
+  white-space: nowrap;
+}
+
+.octofit-table tbody tr {
+  transition: background-color 0.15s;
+  border-bottom: 1px solid var(--ot-border);
+}
+
+.octofit-table tbody tr:hover {
+  background-color: rgba(15, 52, 96, 0.04);
+}
+
+.octofit-table tbody td {
+  vertical-align: middle;
+  padding: 0.75rem 1.1rem;
+  color: var(--ot-text);
+}
+
+.octofit-table tbody tr:first-child td {
+  border-top: none;
+}
+
+/* ── Home hero ──────────────────────────────────────── */
+.octofit-hero {
+  background: linear-gradient(135deg, var(--ot-navy-dark) 0%, var(--ot-navy) 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 3.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(15, 52, 96, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.octofit-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.octofit-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--ot-red);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.octofit-hero p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.octofit-hero .hero-logo {
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  margin-bottom: 1rem;
+}
+
+/* ── Feature cards on home ──────────────────────────── */
+.feature-card {
+  background-color: var(--ot-card-bg);
+  border: 2px solid var(--ot-border) !important;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 52, 96, 0.08);
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  text-decoration: none;
+  color: var(--ot-text);
+  display: block;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(15, 52, 96, 0.18);
+  border-color: var(--ot-red) !important;
+  color: var(--ot-text);
+  text-decoration: none;
+}
+
+.feature-card .card-body {
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+
+.feature-card .feature-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.feature-card .card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ot-navy);
+  margin-bottom: 0.25rem;
+}
+
+.feature-card .card-text {
+  color: var(--ot-text-muted);
+}
+
+/* ── Loading spinner ────────────────────────────────── */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--ot-text-muted);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+footer {
+  background: linear-gradient(90deg, var(--ot-navy-dark) 0%, var(--ot-navy) 100%) !important;
+  color: rgba(255,255,255,0.65) !important;
+  border-top: none !important;
+}
+
+/* ── Record count badge ─────────────────────────────── */
+.record-count {
+  font-size: 0.78rem;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
